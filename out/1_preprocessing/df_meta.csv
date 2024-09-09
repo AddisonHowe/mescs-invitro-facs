@@ -1,0 +1,78 @@
+,condition,filename,path,sample,timestring,timepoint,chir_start,chir_end,fgf_start,fgf_end,pd_start,pd_end,is_reference,ncells
+0,NO CHIR,D2_A1_A01_002.fcs .csv,data/Dataset_A/CSV_Exported/D2_A1_A01_002.fcs .csv,2,D2,2.0,-1.0,-1.0,0.0,3.0,-1.0,-1.0,True,7200
+1,NO CHIR,D2.5_A2_A02_003.fcs .csv,data/Dataset_A/CSV_Exported/D2.5_A2_A02_003.fcs .csv,0,D2.5,2.5,-1.0,-1.0,0.0,3.0,-1.0,-1.0,True,7200
+2,NO CHIR,D3_A4_A04_005.fcs .csv,data/Dataset_A/CSV_Exported/D3_A4_A04_005.fcs .csv,9,D3,3.0,-1.0,-1.0,0.0,3.0,-1.0,-1.0,True,7200
+3,NO CHIR,D3.5_A7_A07_008.fcs .csv,data/Dataset_A/CSV_Exported/D3.5_A7_A07_008.fcs .csv,3,D3.5,3.5,-1.0,-1.0,0.0,3.0,-1.0,-1.0,True,7200
+4,NO CHIR,D4_A11_A11_012.fcs .csv,data/Dataset_A/CSV_Exported/D4_A11_A11_012.fcs .csv,22,D4,4.0,-1.0,-1.0,0.0,3.0,-1.0,-1.0,True,7200
+5,NO CHIR,D4.5_B4_B04_017.fcs .csv,data/Dataset_A/CSV_Exported/D4.5_B4_B04_017.fcs .csv,12,D4.5,4.5,-1.0,-1.0,0.0,3.0,-1.0,-1.0,True,7200
+6,NO CHIR,D5_B10_B10_023.fcs .csv,data/Dataset_A/CSV_Exported/D5_B10_B10_023.fcs .csv,30,D5,5.0,-1.0,-1.0,0.0,3.0,-1.0,-1.0,True,7200
+7,CHIR 2-2.5,D2_A1_A01_002.fcs .csv,data/Dataset_A/CSV_Exported/D2_A1_A01_002.fcs .csv,2,D2,2.0,2.0,2.5,0.0,3.0,-1.0,-1.0,False,7200
+8,CHIR 2-2.5,D2.5_C_A3_A03_004.fcs .csv,data/Dataset_A/CSV_Exported/D2.5_C_A3_A03_004.fcs .csv,1,D2.5,2.5,2.0,2.5,0.0,3.0,-1.0,-1.0,False,7200
+9,CHIR 2-2.5,D3_C2-2.5_A5_A05_006.fcs .csv,data/Dataset_A/CSV_Exported/D3_C2-2.5_A5_A05_006.fcs .csv,10,D3,3.0,2.0,2.5,0.0,3.0,-1.0,-1.0,False,7200
+10,CHIR 2-2.5,D3.5_C2-2.5_A8_A08_009.fcs .csv,data/Dataset_A/CSV_Exported/D3.5_C2-2.5_A8_A08_009.fcs .csv,4,D3.5,3.5,2.0,2.5,0.0,3.0,-1.0,-1.0,False,7200
+11,CHIR 2-2.5,D4_C2-2.5_A12_A12_013.fcs .csv,data/Dataset_A/CSV_Exported/D4_C2-2.5_A12_A12_013.fcs .csv,23,D4,4.0,2.0,2.5,0.0,3.0,-1.0,-1.0,False,7200
+12,CHIR 2-2.5,D4.5_C2-2.5_B5_B05_018.fcs .csv,data/Dataset_A/CSV_Exported/D4.5_C2-2.5_B5_B05_018.fcs .csv,13,D4.5,4.5,2.0,2.5,0.0,3.0,-1.0,-1.0,False,7200
+13,CHIR 2-2.5,D5_C2-2.5_B11_B11_024.fcs .csv,data/Dataset_A/CSV_Exported/D5_C2-2.5_B11_B11_024.fcs .csv,31,D5,5.0,2.0,2.5,0.0,3.0,-1.0,-1.0,False,7200
+14,CHIR 2-3,D2_A1_A01_002.fcs .csv,data/Dataset_A/CSV_Exported/D2_A1_A01_002.fcs .csv,2,D2,2.0,2.0,3.0,0.0,3.0,-1.0,-1.0,True,7200
+15,CHIR 2-3,D2.5_C_A3_A03_004.fcs .csv,data/Dataset_A/CSV_Exported/D2.5_C_A3_A03_004.fcs .csv,1,D2.5,2.5,2.0,3.0,0.0,3.0,-1.0,-1.0,True,7200
+16,CHIR 2-3,D3_C2-3_A6_A06_007.fcs .csv,data/Dataset_A/CSV_Exported/D3_C2-3_A6_A06_007.fcs .csv,11,D3,3.0,2.0,3.0,0.0,3.0,-1.0,-1.0,True,7200
+17,CHIR 2-3,D3.5_C2-3_A9_A09_010.fcs .csv,data/Dataset_A/CSV_Exported/D3.5_C2-3_A9_A09_010.fcs .csv,6,D3.5,3.5,2.0,3.0,0.0,3.0,-1.0,-1.0,True,7200
+18,CHIR 2-3,D4_C2-3_B1_B01_014.fcs .csv,data/Dataset_A/CSV_Exported/D4_C2-3_B1_B01_014.fcs .csv,25,D4,4.0,2.0,3.0,0.0,3.0,-1.0,-1.0,True,7200
+19,CHIR 2-3,D4.5_C2-3_B6_B06_019.fcs .csv,data/Dataset_A/CSV_Exported/D4.5_C2-3_B6_B06_019.fcs .csv,15,D4.5,4.5,2.0,3.0,0.0,3.0,-1.0,-1.0,True,7200
+20,CHIR 2-3,D5_C2-3_B12_B12_025.fcs .csv,data/Dataset_A/CSV_Exported/D5_C2-3_B12_B12_025.fcs .csv,33,D5,5.0,2.0,3.0,0.0,3.0,-1.0,-1.0,True,7200
+21,CHIR 2-3.5,D2_A1_A01_002.fcs .csv,data/Dataset_A/CSV_Exported/D2_A1_A01_002.fcs .csv,2,D2,2.0,2.0,3.5,0.0,3.0,-1.0,-1.0,False,7200
+22,CHIR 2-3.5,D2.5_C_A3_A03_004.fcs .csv,data/Dataset_A/CSV_Exported/D2.5_C_A3_A03_004.fcs .csv,1,D2.5,2.5,2.0,3.5,0.0,3.0,-1.0,-1.0,False,7200
+23,CHIR 2-3.5,D3_C2-3_A6_A06_007.fcs .csv,data/Dataset_A/CSV_Exported/D3_C2-3_A6_A06_007.fcs .csv,11,D3,3.0,2.0,3.5,0.0,3.0,-1.0,-1.0,False,7200
+24,CHIR 2-3.5,D3.5_C2-3.5_A10_A10_011.fcs .csv,data/Dataset_A/CSV_Exported/D3.5_C2-3.5_A10_A10_011.fcs .csv,5,D3.5,3.5,2.0,3.5,0.0,3.0,-1.0,-1.0,False,7200
+25,CHIR 2-3.5,D4_C2-3.5_B2_B02_015.fcs .csv,data/Dataset_A/CSV_Exported/D4_C2-3.5_B2_B02_015.fcs .csv,24,D4,4.0,2.0,3.5,0.0,3.0,-1.0,-1.0,False,7200
+26,CHIR 2-3.5,D4.5_C2-3.5_B7_B07_020.fcs .csv,data/Dataset_A/CSV_Exported/D4.5_C2-3.5_B7_B07_020.fcs .csv,14,D4.5,4.5,2.0,3.5,0.0,3.0,-1.0,-1.0,False,7200
+27,CHIR 2-3.5,D5_C2-3.5_C1_C01_026.fcs .csv,data/Dataset_A/CSV_Exported/D5_C2-3.5_C1_C01_026.fcs .csv,32,D5,5.0,2.0,3.5,0.0,3.0,-1.0,-1.0,False,7200
+28,CHIR 2-4,D2_A1_A01_002.fcs .csv,data/Dataset_A/CSV_Exported/D2_A1_A01_002.fcs .csv,2,D2,2.0,2.0,4.0,0.0,3.0,-1.0,-1.0,False,7200
+29,CHIR 2-4,D2.5_C_A3_A03_004.fcs .csv,data/Dataset_A/CSV_Exported/D2.5_C_A3_A03_004.fcs .csv,1,D2.5,2.5,2.0,4.0,0.0,3.0,-1.0,-1.0,False,7200
+30,CHIR 2-4,D3_C2-3_A6_A06_007.fcs .csv,data/Dataset_A/CSV_Exported/D3_C2-3_A6_A06_007.fcs .csv,11,D3,3.0,2.0,4.0,0.0,3.0,-1.0,-1.0,False,7200
+31,CHIR 2-4,D3.5_C2-3.5_A10_A10_011.fcs .csv,data/Dataset_A/CSV_Exported/D3.5_C2-3.5_A10_A10_011.fcs .csv,5,D3.5,3.5,2.0,4.0,0.0,3.0,-1.0,-1.0,False,7200
+32,CHIR 2-4,D4_C2-4_B3_B03_016.fcs .csv,data/Dataset_A/CSV_Exported/D4_C2-4_B3_B03_016.fcs .csv,26,D4,4.0,2.0,4.0,0.0,3.0,-1.0,-1.0,False,7200
+33,CHIR 2-4,D4.5_C2-4_B8_B08_021.fcs .csv,data/Dataset_A/CSV_Exported/D4.5_C2-4_B8_B08_021.fcs .csv,17,D4.5,4.5,2.0,4.0,0.0,3.0,-1.0,-1.0,False,7200
+34,CHIR 2-4,D5_C2-4_C2_C02_027.fcs .csv,data/Dataset_A/CSV_Exported/D5_C2-4_C2_C02_027.fcs .csv,34,D5,5.0,2.0,4.0,0.0,3.0,-1.0,-1.0,False,7200
+35,CHIR 2-5,D2_A1_A01_002.fcs .csv,data/Dataset_A/CSV_Exported/D2_A1_A01_002.fcs .csv,2,D2,2.0,2.0,5.0,0.0,3.0,-1.0,-1.0,True,7200
+36,CHIR 2-5,D2.5_C_A3_A03_004.fcs .csv,data/Dataset_A/CSV_Exported/D2.5_C_A3_A03_004.fcs .csv,1,D2.5,2.5,2.0,5.0,0.0,3.0,-1.0,-1.0,True,7200
+37,CHIR 2-5,D3_C2-3_A6_A06_007.fcs .csv,data/Dataset_A/CSV_Exported/D3_C2-3_A6_A06_007.fcs .csv,11,D3,3.0,2.0,5.0,0.0,3.0,-1.0,-1.0,True,7200
+38,CHIR 2-5,D3.5_C2-3.5_A10_A10_011.fcs .csv,data/Dataset_A/CSV_Exported/D3.5_C2-3.5_A10_A10_011.fcs .csv,5,D3.5,3.5,2.0,5.0,0.0,3.0,-1.0,-1.0,True,7200
+39,CHIR 2-5,D4_C2-4_B3_B03_016.fcs .csv,data/Dataset_A/CSV_Exported/D4_C2-4_B3_B03_016.fcs .csv,26,D4,4.0,2.0,5.0,0.0,3.0,-1.0,-1.0,True,7200
+40,CHIR 2-5,D4.5_C2-4.5_B9_B09_022.fcs .csv,data/Dataset_A/CSV_Exported/D4.5_C2-4.5_B9_B09_022.fcs .csv,16,D4.5,4.5,2.0,5.0,0.0,3.0,-1.0,-1.0,True,7200
+41,CHIR 2-5,D5_C2-5_C3_C03_028.fcs .csv,data/Dataset_A/CSV_Exported/D5_C2-5_C3_C03_028.fcs .csv,35,D5,5.0,2.0,5.0,0.0,3.0,-1.0,-1.0,True,7200
+42,CHIR 2-5 FGF 2-3,D2_A1_A01_002.fcs .csv,data/Dataset_A/CSV_Exported/D2_A1_A01_002.fcs .csv,2,D2,2.0,2.0,5.0,0.0,3.0,3.0,5.0,False,7200
+43,CHIR 2-5 FGF 2-3,D2.5_C_A3_A03_004.fcs .csv,data/Dataset_A/CSV_Exported/D2.5_C_A3_A03_004.fcs .csv,1,D2.5,2.5,2.0,5.0,0.0,3.0,3.0,5.0,False,7200
+44,CHIR 2-5 FGF 2-3,D3_C2-3_A6_A06_007.fcs .csv,data/Dataset_A/CSV_Exported/D3_C2-3_A6_A06_007.fcs .csv,11,D3,3.0,2.0,5.0,0.0,3.0,3.0,5.0,False,7200
+45,CHIR 2-5 FGF 2-3,D3.5_CF2-3_C4_C04_029.fcs .csv,data/Dataset_A/CSV_Exported/D3.5_CF2-3_C4_C04_029.fcs .csv,7,D3.5,3.5,2.0,5.0,0.0,3.0,3.0,5.0,False,7200
+46,CHIR 2-5 FGF 2-3,D4_CF2-3_C6_C06_031.fcs .csv,data/Dataset_A/CSV_Exported/D4_CF2-3_C6_C06_031.fcs .csv,28,D4,4.0,2.0,5.0,0.0,3.0,3.0,5.0,False,7200
+47,CHIR 2-5 FGF 2-3,D4.5_CF2-3_C9_C09_034.fcs .csv,data/Dataset_A/CSV_Exported/D4.5_CF2-3_C9_C09_034.fcs .csv,19,D4.5,4.5,2.0,5.0,0.0,3.0,3.0,5.0,False,7200
+48,CHIR 2-5 FGF 2-3,D5_CF2-3_D1_D01_038.fcs .csv,data/Dataset_A/CSV_Exported/D5_CF2-3_D1_D01_038.fcs .csv,37,D5,5.0,2.0,5.0,0.0,3.0,3.0,5.0,False,7200
+49,CHIR 2-5 FGF 2-3.5,D2_A1_A01_002.fcs .csv,data/Dataset_A/CSV_Exported/D2_A1_A01_002.fcs .csv,2,D2,2.0,2.0,5.0,0.0,3.5,3.5,5.0,False,7200
+50,CHIR 2-5 FGF 2-3.5,D2.5_C_A3_A03_004.fcs .csv,data/Dataset_A/CSV_Exported/D2.5_C_A3_A03_004.fcs .csv,1,D2.5,2.5,2.0,5.0,0.0,3.5,3.5,5.0,False,7200
+51,CHIR 2-5 FGF 2-3.5,D3_C2-3_A6_A06_007.fcs .csv,data/Dataset_A/CSV_Exported/D3_C2-3_A6_A06_007.fcs .csv,11,D3,3.0,2.0,5.0,0.0,3.5,3.5,5.0,False,7200
+52,CHIR 2-5 FGF 2-3.5,D3.5_CF3.5_C5_C05_030.fcs .csv,data/Dataset_A/CSV_Exported/D3.5_CF3.5_C5_C05_030.fcs .csv,8,D3.5,3.5,2.0,5.0,0.0,3.5,3.5,5.0,False,7200
+53,CHIR 2-5 FGF 2-3.5,D4_CF2-3.5_C7_C07_032.fcs .csv,data/Dataset_A/CSV_Exported/D4_CF2-3.5_C7_C07_032.fcs .csv,27,D4,4.0,2.0,5.0,0.0,3.5,3.5,5.0,False,7200
+54,CHIR 2-5 FGF 2-3.5,D4.5_CF2-3.5_C10_C10_035.fcs .csv,data/Dataset_A/CSV_Exported/D4.5_CF2-3.5_C10_C10_035.fcs .csv,18,D4.5,4.5,2.0,5.0,0.0,3.5,3.5,5.0,False,7200
+55,CHIR 2-5 FGF 2-3.5,D5_CF2-3.5_D2_D02_039.fcs .csv,data/Dataset_A/CSV_Exported/D5_CF2-3.5_D2_D02_039.fcs .csv,36,D5,5.0,2.0,5.0,0.0,3.5,3.5,5.0,False,7200
+56,CHIR 2-5 FGF 2-4,D2_A1_A01_002.fcs .csv,data/Dataset_A/CSV_Exported/D2_A1_A01_002.fcs .csv,2,D2,2.0,2.0,5.0,0.0,4.0,4.0,5.0,False,7200
+57,CHIR 2-5 FGF 2-4,D2.5_C_A3_A03_004.fcs .csv,data/Dataset_A/CSV_Exported/D2.5_C_A3_A03_004.fcs .csv,1,D2.5,2.5,2.0,5.0,0.0,4.0,4.0,5.0,False,7200
+58,CHIR 2-5 FGF 2-4,D3_C2-3_A6_A06_007.fcs .csv,data/Dataset_A/CSV_Exported/D3_C2-3_A6_A06_007.fcs .csv,11,D3,3.0,2.0,5.0,0.0,4.0,4.0,5.0,False,7200
+59,CHIR 2-5 FGF 2-4,D3.5_CF3.5_C5_C05_030.fcs .csv,data/Dataset_A/CSV_Exported/D3.5_CF3.5_C5_C05_030.fcs .csv,8,D3.5,3.5,2.0,5.0,0.0,4.0,4.0,5.0,False,7200
+60,CHIR 2-5 FGF 2-4,D4_CF2-4_C8_C08_033.fcs .csv,data/Dataset_A/CSV_Exported/D4_CF2-4_C8_C08_033.fcs .csv,29,D4,4.0,2.0,5.0,0.0,4.0,4.0,5.0,False,7200
+61,CHIR 2-5 FGF 2-4,D4.5_CF2-4_C11_C11_036.fcs .csv,data/Dataset_A/CSV_Exported/D4.5_CF2-4_C11_C11_036.fcs .csv,21,D4.5,4.5,2.0,5.0,0.0,4.0,4.0,5.0,False,7200
+62,CHIR 2-5 FGF 2-4,D5_CF2-4_D3_D03_040.fcs .csv,data/Dataset_A/CSV_Exported/D5_CF2-4_D3_D03_040.fcs .csv,39,D5,5.0,2.0,5.0,0.0,4.0,4.0,5.0,False,7200
+63,CHIR 2-5 FGF 2-4.5,D2_A1_A01_002.fcs .csv,data/Dataset_A/CSV_Exported/D2_A1_A01_002.fcs .csv,2,D2,2.0,2.0,5.0,0.0,4.5,4.5,5.0,False,7200
+64,CHIR 2-5 FGF 2-4.5,D2.5_C_A3_A03_004.fcs .csv,data/Dataset_A/CSV_Exported/D2.5_C_A3_A03_004.fcs .csv,1,D2.5,2.5,2.0,5.0,0.0,4.5,4.5,5.0,False,7200
+65,CHIR 2-5 FGF 2-4.5,D3_C2-3_A6_A06_007.fcs .csv,data/Dataset_A/CSV_Exported/D3_C2-3_A6_A06_007.fcs .csv,11,D3,3.0,2.0,5.0,0.0,4.5,4.5,5.0,False,7200
+66,CHIR 2-5 FGF 2-4.5,D3.5_CF3.5_C5_C05_030.fcs .csv,data/Dataset_A/CSV_Exported/D3.5_CF3.5_C5_C05_030.fcs .csv,8,D3.5,3.5,2.0,5.0,0.0,4.5,4.5,5.0,False,7200
+67,CHIR 2-5 FGF 2-4.5,D4_CF2-4_C8_C08_033.fcs .csv,data/Dataset_A/CSV_Exported/D4_CF2-4_C8_C08_033.fcs .csv,29,D4,4.0,2.0,5.0,0.0,4.5,4.5,5.0,False,7200
+68,CHIR 2-5 FGF 2-4.5,D4.5_CF2-4.5_C12_C12_037.fcs .csv,data/Dataset_A/CSV_Exported/D4.5_CF2-4.5_C12_C12_037.fcs .csv,20,D4.5,4.5,2.0,5.0,0.0,4.5,4.5,5.0,False,7200
+69,CHIR 2-5 FGF 2-4.5,D5_CF2-4.5_D4_D04_041.fcs .csv,data/Dataset_A/CSV_Exported/D5_CF2-4.5_D4_D04_041.fcs .csv,38,D5,5.0,2.0,5.0,0.0,4.5,4.5,5.0,False,7200
+70,CHIR 2-5 FGF 2-5,D2_A1_A01_002.fcs .csv,data/Dataset_A/CSV_Exported/D2_A1_A01_002.fcs .csv,2,D2,2.0,2.0,5.0,0.0,5.0,-1.0,-1.0,False,7200
+71,CHIR 2-5 FGF 2-5,D2.5_C_A3_A03_004.fcs .csv,data/Dataset_A/CSV_Exported/D2.5_C_A3_A03_004.fcs .csv,1,D2.5,2.5,2.0,5.0,0.0,5.0,-1.0,-1.0,False,7200
+72,CHIR 2-5 FGF 2-5,D3_C2-3_A6_A06_007.fcs .csv,data/Dataset_A/CSV_Exported/D3_C2-3_A6_A06_007.fcs .csv,11,D3,3.0,2.0,5.0,0.0,5.0,-1.0,-1.0,False,7200
+73,CHIR 2-5 FGF 2-5,D3.5_CF3.5_C5_C05_030.fcs .csv,data/Dataset_A/CSV_Exported/D3.5_CF3.5_C5_C05_030.fcs .csv,8,D3.5,3.5,2.0,5.0,0.0,5.0,-1.0,-1.0,False,7200
+74,CHIR 2-5 FGF 2-5,D4_CF2-4_C8_C08_033.fcs .csv,data/Dataset_A/CSV_Exported/D4_CF2-4_C8_C08_033.fcs .csv,29,D4,4.0,2.0,5.0,0.0,5.0,-1.0,-1.0,False,7200
+75,CHIR 2-5 FGF 2-5,D4.5_CF2-4.5_C12_C12_037.fcs .csv,data/Dataset_A/CSV_Exported/D4.5_CF2-4.5_C12_C12_037.fcs .csv,20,D4.5,4.5,2.0,5.0,0.0,5.0,-1.0,-1.0,False,7200
+76,CHIR 2-5 FGF 2-5,D5_CF2-5_D5_D05_042.fcs .csv,data/Dataset_A/CSV_Exported/D5_CF2-5_D5_D05_042.fcs .csv,40,D5,5.0,2.0,5.0,0.0,5.0,-1.0,-1.0,False,7200
