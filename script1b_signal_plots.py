@@ -9,17 +9,12 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
 from constants import CONDITIONS, CONDITION_SIGNALS
+from constants import CHIR_COLOR, FGF_COLOR, PD_COLOR, LFGF_COLOR, WHITE
 
 sf = 1/2.54  # scale factor from [cm] to inches
 
 OUTDIR = f"out/1b_signal_plots"
 FIGSIZE = (5 * sf, 1.5 * sf)
-
-CHIR_COLOR = (0.57, 0.26, 0.98)
-FGF_COLOR  = (0.70, 0.09, 0.32)
-PD_COLOR   = (0.57, 0.74, 0.32)
-LFGF_COLOR = (0.82, 0.50, 0.62)
-WHITE      = (1.00, 1.00, 1.00)
 
 TIMEPOINTS = [2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]
 

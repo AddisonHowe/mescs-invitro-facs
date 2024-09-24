@@ -14,6 +14,7 @@ warnings.filterwarnings(
 
 import numpy as np
 import matplotlib.pyplot as plt
+plt.style.use("styles/fig6.mplstyle")
 import seaborn as sns
 import pandas as pd
 from sklearn.decomposition import PCA
@@ -1034,7 +1035,7 @@ if 5 in MAKEPLOTS:
 ##  (Single Axis) Combined histogram and signal function  ##
 ############################################################
                 
-FIGSIZE = (7*sf, 4*sf)
+FIGSIZE = (7.25*sf, 4*sf)
 
 if 6 in MAKEPLOTS:
     time0 = time.time()
@@ -1115,10 +1116,11 @@ if 6 in MAKEPLOTS:
 
         # ax1.set_ylabel("Signal")
         ax2.set_ylabel("")
+        ax2.set_xlabel("")
 
         plt.savefig(
             f"{IMGDIR}/pca_dec{TRANSITION_IDX}_{cond_name}_sig_hist.pdf", 
-            transparent=True,
+            transparent=True, bbox_inches='tight'
         )
         plt.close()
 

@@ -175,8 +175,9 @@ SAMPLEIDX_TO_FNAME = {
 ##  Colors  ##
 ##############
 
-CHIR_COLOR = (0.57, 0.26, 0.98)
-FGF_COLOR  = (0.70, 0.09, 0.32)
-PD_COLOR   = (0.57, 0.74, 0.32)
-LFGF_COLOR = (0.82, 0.50, 0.62)
+# CHIR_COLOR = (0.57, 0.26, 0.98)  # As used in Sáez et al.
+CHIR_COLOR = (0.18, 0.22, 0.73)  # Dark blue plasma for PLNN project
+FGF_COLOR  = (0.70, 0.09, 0.32)  # As used in Sáez et al.
+PD_COLOR   = (0.57, 0.74, 0.32)  # As used in Sáez et al.
+LFGF_COLOR = (0.82, 0.50, 0.62)  # As used in Sáez et al.
 WHITE      = (1.00, 1.00, 1.00)
