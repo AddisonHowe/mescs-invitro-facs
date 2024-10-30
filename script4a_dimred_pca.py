@@ -35,6 +35,8 @@ LABEL_FONTSIZE = 10
 MAKEPLOTS = {1, 2, 3, 4, 5, 6}
 # MAKEPLOTS = {6}
 
+DENSITY_CMAP = 'Greys_r'
+
 ########################
 ##  Argument Parsing  ##
 ########################
@@ -377,7 +379,7 @@ if 1 in MAKEPLOTS:
                 ax2.imshow(
                     hist2d, origin='lower', aspect='auto', 
                     extent=[edges_x[0], edges_x[-1], edges_y[0], edges_y[-1]],
-                    cmap='viridis',
+                    cmap=DENSITY_CMAP,
                     norm='log',
                 )
                 ax2.set_xlim(*ax1.get_xlim())
@@ -416,7 +418,7 @@ if 1 in MAKEPLOTS:
                         hist2d, origin='lower', aspect='auto', 
                         extent=[edges_x[0], edges_x[-1], 
                                 edges_y[0], edges_y[-1]],
-                        cmap='viridis',
+                        cmap=DENSITY_CMAP,
                         norm='log',
                     )
 
@@ -593,7 +595,7 @@ if 2 in MAKEPLOTS:
                         hist2d, origin='lower', aspect='auto', 
                         extent=[edges_x[0], edges_x[-1], 
                                 edges_y[0], edges_y[-1]],
-                        cmap='viridis',
+                        cmap=DENSITY_CMAP,
                         norm='log',
                     )
 
@@ -870,7 +872,7 @@ if 4 in MAKEPLOTS:
                         hist2d, origin='lower', aspect='auto', 
                         extent=[edges_x[0], edges_x[-1], 
                                 edges_y[0], edges_y[-1]],
-                        cmap='viridis',
+                        cmap=DENSITY_CMAP,
                         norm='log',
                         interpolation='none'
                     )
