@@ -1,5 +1,7 @@
 """Script 2a: Generate plots post clustering.
 
+Generate plots detailing the change in cell types across time and experimental
+condition.
 """
 
 import os

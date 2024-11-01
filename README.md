@@ -10,6 +10,7 @@ A separate Github repository corresponding to this work can be found at [https:/
 ```bash
 conda create -p ./env python=3.12 numpy=1.26 matplotlib=3.8 pandas=2.2 scikit-learn=1.4 scipy=1.12 seaborn=0.13 tqdm=4.66 umap-learn=0.5 ipykernel ipywidgets
 conda activate env
+pip install flowutils==1.1
 ```
 
 ## About

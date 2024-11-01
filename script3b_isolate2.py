@@ -23,7 +23,7 @@ import seaborn as sns
 import pandas as pd
 import scipy
 
-from constants import GENES, CONDITIONS, CONDITION_FILES, GENE_TO_IDX
+from constants import CONDITIONS, CONDITION_FILES, GENE_TO_IDX
 from constants import CONDITION_SIGNALS
 from script2_clustering import NAMEMAP, COLORMAP
 from script2_clustering import CTYPE_ORDER, CTYPE_TO_IDX, TIMEPOINT_CLUSTERS

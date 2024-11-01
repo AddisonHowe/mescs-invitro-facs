@@ -18,10 +18,11 @@ plt.style.use("styles/fig6.mplstyle")
 import seaborn as sns
 import pandas as pd
 from sklearn.decomposition import PCA
+from flowutils.transforms import logicle
 
 from helpers import get_signal_params_from_condition, get_hist2d
+from constants import NORMALIZATION_CONSTANT
 from constants import GENES, CONDITIONS, CONDITION_FILES, CONDITION_SIGNALS
-from constants import TRAINING_CONDITIONS, VALIDATION_CONDITIONS
 from script1b_signal_plots import plot_condition, plot_effective_condition
 from script1b_signal_plots import CHIR_COLOR, FGF_COLOR, PD_COLOR, WHITE
 from script2_clustering import CTYPE_TO_IDX, CTYPE_ORDER, NAMEMAP, COLORMAP
@@ -33,7 +34,6 @@ TITLE_FONTSIZE = 14
 LABEL_FONTSIZE = 10
 
 MAKEPLOTS = {1, 2, 3, 4, 5, 6}
-# MAKEPLOTS = {6}
 
 DENSITY_CMAP = 'Greys_r'
 
@@ -45,6 +45,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-k', '--key', type=str, default='facs_v1')
 parser.add_argument('-d', '--decision', type=int, default=1, choices=[1, 2])
 parser.add_argument('-nv', '--normalize_variance', action="store_true")
+parser.add_argument('--log_normalize', action="store_true")
+parser.add_argument('--logicle', action="store_true")
 parser.add_argument('--fit_on_subset', action="store_true")
 parser.add_argument('-p', '--make_plots', type=int, nargs='+', default=None)
 parser.add_argument('-t', '--time_shift', type=float, default=None)
@@ -54,6 +56,8 @@ args = parser.parse_args()
 KEY = args.key
 TRANSITION_IDX = args.decision
 NORMALIZE_VARIANCE = args.normalize_variance
+LOG_NORMALIZE = args.log_normalize
+LOGICLE_NORMALIZE = args.logicle
 FIT_ON_SUBSET = args.fit_on_subset
 TIMESHIFT = args.time_shift
 STYLE = args.style
@@ -70,6 +74,7 @@ KEY_TO_SIGRATE = {
     'facs_v2' : 1000,
     'facs_v3' : 1000,
     'facs_v4' : 1000,
+    'facs_v5' : 1000,
 }
 
 SIGRATE = KEY_TO_SIGRATE[KEY]
@@ -80,6 +85,7 @@ KEY_TO_CTYPES1 = {
     'facs_v2' : ['EPI', 'Tr', 'CE', 'AN'],
     'facs_v3' : ['EPI', 'Tr', 'CE', 'AN'],
     'facs_v4' : ['EPI', 'Tr', 'CE', 'AN'],
+    'facs_v5' : ['EPI', 'Tr', 'CE', 'AN'],
 }
 
 KEY_TO_CTYPES2 = {
@@ -87,6 +93,7 @@ KEY_TO_CTYPES2 = {
     'facs_v2' : ['CE', 'PN', 'M'],
     'facs_v3' : ['CE', 'PN', 'M'],
     'facs_v4' : ['CE', 'PN', 'M'],
+    'facs_v5' : ['CE', 'PN', 'M'],
 }
 
 # Train/Validate/Test split on the conditions for decisions 1 and 2.
@@ -108,6 +115,11 @@ KEY_TO_CONDITION_SPLIT1 = {
         'testing'    : [4, 8],
     },
     'facs_v4' : {
+        'training'   : [0, 2, 5, 6, 10],
+        'validation' : [1, 3, 7, 9],
+        'testing'    : [4, 8],
+    },
+    'facs_v5' : {
         'training'   : [0, 2, 5, 6, 10],
         'validation' : [1, 3, 7, 9],
         'testing'    : [4, 8],
@@ -135,6 +147,11 @@ KEY_TO_CONDITION_SPLIT2 = {
         'validation' : [1, 3, 7, 9],
         'testing'    : [4, 8],
     },
+    'facs_v5' : {
+        'training'   : [2, 5, 6, 10],
+        'validation' : [1, 3, 7, 9],
+        'testing'    : [4, 8],
+    },
 }
 
 # The timepoints to use as the initial and final snapshot, on which the 
@@ -144,6 +161,7 @@ KEY_TO_TPS_1 = {
     'facs_v2' : (2.0, 3.5),
     'facs_v3' : (2.0, 3.5),
     'facs_v4' : (2.0, 3.5),
+    'facs_v5' : (2.0, 3.5),
 }
 
 KEY_TO_TPS_2 = {
@@ -151,6 +169,7 @@ KEY_TO_TPS_2 = {
     'facs_v2' : (3.0, 5.0),
     'facs_v3' : (3.0, 5.0),
     'facs_v4' : (3.0, 5.0),
+    'facs_v5' : (3.0, 5.0),
 }
 
 
@@ -178,6 +197,10 @@ if NORMALIZE_VARIANCE:
     OUTDIR += "_varnorm"
 if FIT_ON_SUBSET:
     OUTDIR += "_fitonsubset"
+if LOG_NORMALIZE:
+    OUTDIR += "_lognorm"
+elif LOGICLE_NORMALIZE:
+    OUTDIR += "_logicle"
     
 IMGDIR = f"{OUTDIR}/images"
 
@@ -199,7 +222,22 @@ DF_MAIN = pd.read_csv(df_main_fpath)
 
 CLUSTER_KEY = "cluster_post_replacement"
 
-TIMEPOINTS = np.array([2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0])
+if TRANSITION_IDX == 1:
+    TIMEPOINTS = {
+        'facs_v1' : np.array([2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]),
+        'facs_v2' : np.array([2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]),
+        'facs_v3' : np.array([2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]),
+        'facs_v4' : np.array([2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]),
+        'facs_v5' : np.array([2.0, 2.5, 3.0, 3.5]),
+    }[KEY]
+elif TRANSITION_IDX == 2:
+    TIMEPOINTS = {
+        'facs_v1' : np.array([2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]),
+        'facs_v2' : np.array([2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]),
+        'facs_v3' : np.array([2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]),
+        'facs_v4' : np.array([2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]),
+        'facs_v5' : np.array([3.0, 3.5, 4.0, 4.5, 5.0]),
+    }[KEY]
 
 #####################################
 ##  Subset the data and normalize  ##
@@ -212,6 +250,13 @@ DF_SUBSET = DF_MAIN.loc[DF_MAIN[CLUSTER_KEY].isin(ctype_idxs)].copy()
 
 # Get gene expression data for that subset, and normalize it
 x = DF_SUBSET[GENES].to_numpy()
+
+if LOG_NORMALIZE:
+    x = np.log10(1 + x)
+elif LOGICLE_NORMALIZE:
+    xfacs = x * NORMALIZATION_CONSTANT  # rescale the data
+    x = logicle(xfacs, None)
+
 x = x - np.mean(x, 0)  # mean center
 if NORMALIZE_VARIANCE:
     x = x / np.std(x, 0)  # normalize variance
@@ -240,7 +285,6 @@ for i in range(res.shape[1]):
     
 pc_sets = [
     [1, 2],
-    # [1, 2, 3]
 ]
 
 for pc_set in pc_sets:
@@ -248,6 +292,11 @@ for pc_set in pc_sets:
 
     outdir = f"{OUTDIR}/transition{TRANSITION_IDX}_subset_{ctypes_str}_{pc_str}"
     os.makedirs(outdir, exist_ok=True)
+
+    np.save(f"{outdir}/components.npy", pca.components_)
+    np.save(f"{outdir}/exp_variance.npy", pca.explained_variance_)
+    np.save(f"{outdir}/exp_variance_ratio.npy", pca.explained_variance_ratio_)
+    np.savetxt(f"{outdir}/genes.txt", GENES, fmt='%s')
 
     for cond_set, cond_set_name in zip([training_conditions, 
                                         validation_conditions,
@@ -290,6 +339,7 @@ for pc_set in pc_sets:
                     allow_pickle=True)
             np.save(f"{simdir}/ts.npy", ts)
             np.save(f"{simdir}/sigparams.npy", sigparams)
+            np.savetxt(f"{simdir}/condition.txt", [CONDITIONS[cond_idx]], fmt='%s')
         
         nsims = len(cond_set)
         if nsims > 0:
