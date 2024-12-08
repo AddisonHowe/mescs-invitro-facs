@@ -21,7 +21,7 @@ run_script4a:
 	python script4a_dimred_pca.py -k facs_v3 -d 1 --fit_on_subset -p 0
 	
 	# facs_dec2_v1 --- Version 4: timeshift for dec 2; signal rate 1000.
-	python script4a_dimred_pca.py -k facs_v4 -d 2 --fit_on_subset -p 0
+	python script4a_dimred_pca.py -k facs_v4 -d 2 --fit_on_subset -p 0  
 
 	# facs_dec1_v2 --- Version 5: timeshift for dec 2; signal rate 1000, log-normalized
 	python script4a_dimred_pca.py -k facs_v5 -d 1 --fit_on_subset --log_normalize -p 0
@@ -34,6 +34,9 @@ run_script4a:
 	
 	# facs_dec2_v3 --- Version 5: timeshift for dec 2; signal rate 1000, logicle
 	python script4a_dimred_pca.py -k facs_v5 -d 2 --fit_on_subset --logicle -p 0
+
+	# facs_dec1_v4 --- Version 5: timeshift for dec 2; signal rate 1000
+	python script4a_dimred_pca.py -k facs_v5 -d 1 --fit_on_subset -p 0
 
 run_script4b:
 	# facs_dec1_v4 --- Version 5: timeshift for dec 2; signal rate 1000, logicle

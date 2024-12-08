@@ -33,7 +33,7 @@ timestart = time.time()
 TITLE_FONTSIZE = 14
 LABEL_FONTSIZE = 10
 
-MAKEPLOTS = {1, 2, 3, 4, 5, 6}
+MAKEPLOTS = {1, 2, 3, 4, 5, 6, 7}
 
 DENSITY_CMAP = 'Greys_r'
 
@@ -232,10 +232,10 @@ if TRANSITION_IDX == 1:
     }[KEY]
 elif TRANSITION_IDX == 2:
     TIMEPOINTS = {
-        'facs_v1' : np.array([2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]),
-        'facs_v2' : np.array([2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]),
-        'facs_v3' : np.array([2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]),
-        'facs_v4' : np.array([2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]),
+        'facs_v1' : np.array([3.0, 3.5, 4.0, 4.5, 5.0]),
+        'facs_v2' : np.array([3.0, 3.5, 4.0, 4.5, 5.0]),
+        'facs_v3' : np.array([3.0, 3.5, 4.0, 4.5, 5.0]),
+        'facs_v4' : np.array([3.0, 3.5, 4.0, 4.5, 5.0]),
         'facs_v5' : np.array([3.0, 3.5, 4.0, 4.5, 5.0]),
     }[KEY]
 
@@ -310,7 +310,8 @@ for pc_set in pc_sets:
             df = DF_SUBSET[DF_SUBSET['filename'].isin(CONDITION_FILES[cond_idx])]
             
             # Get saved timepoints of the experiment
-            ts = np.sort(df['timepoint'].unique())
+            # ts = np.sort(df['timepoint'].unique())
+            ts = TIMEPOINTS
 
             # Save data in a list with elements corresponding to each timepoint
             xs = []
@@ -1178,6 +1179,84 @@ if 6 in MAKEPLOTS:
 
     time1 = time.time()
     print(f"Plot 6 completed in {time1-time0:.4f} sec")
+
+
+################################################################
+##  PCA Results: Scree plot, etc.                             ##
+################################################################
+
+FIGSIZE = (7.25*sf, 4*sf)
+
+if 7 in MAKEPLOTS:
+    time0 = time.time()
+    print("Plotting 7...")
+
+    fig, ax = plt.subplots(1, 1, figsize=FIGSIZE)
+
+    for i in range(len(pca.components_)):
+        print(f"PC{i+1}: {100*pca.explained_variance_ratio_[i]:.5f}%")
+        print(f"  {pca.components_[i]}")
+    ax.plot(
+        range(1, 1 + len(pca.components_)), 
+        100 * pca.explained_variance_ratio_,
+        '.', 
+    )
+    ax.set_xlabel("PC")
+    ax.set_ylabel("% exp variance")
+
+    plt.savefig(
+        f"{IMGDIR}/pca_screeplot.pdf", 
+        transparent=True, bbox_inches='tight'
+    )
+    plt.close()
+
+
+    # Plot loadings for PC1 and PC2
+    fig, ax = plt.subplots(figsize=(3, 3))
+
+    loadings = pca.components_.T * np.sqrt(pca.explained_variance_)
+
+    def plot_loadings(ax, score, coeff, labels=None, scale=1.15):
+        xs = score[:,0]
+        ys = score[:,1]
+        n = coeff.shape[0]
+        if labels is None:
+            labels = [f"Var {i+1}" for i in range(n)]
+
+        ax.plot(
+            xs ,ys, '.', 
+            color='grey', 
+            alpha=0.1,
+            rasterized=True,
+            zorder=1,
+        )
+        for i in range(n):
+            ax.arrow(
+                0, 0, coeff[i,0] * scale, coeff[i,1] * scale, 
+                color='r', alpha=1.0, head_width=0.2
+            )
+            ax.text(
+                coeff[i,0] * scale * 1.15, coeff[i,1] * scale * 1.15, 
+                labels[i], 
+                color='k', ha='center', va='center',
+            )
+
+    ax.set_xlabel("PC1")
+    ax.set_ylabel("PC2")
+    # ax.grid()
+ 
+    plot_loadings(ax, res[:,0:2], pca.components_.T, labels=GENES, scale=5)
+
+    plt.savefig(
+        f"{IMGDIR}/pca_loadings.pdf", 
+        transparent=True, bbox_inches='tight'
+    )
+    plt.close()
+
+    time1 = time.time()
+    print(f"Plot 6 completed in {time1-time0:.4f} sec")
+    
+
 
 ###########################
 ###########################
